@@ -17,15 +17,23 @@
 
       <form action="/books/search" method="POST" class="col-12 col-lg-auto mb-3 me-lg-3" _lpchecked="1">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Book Title..." name="title">
+          <input type="text" class="form-control" placeholder="Book Title..." name="title" required>
           <button type="submit" class="btn btn-secondary">Search</button>
         </div>
       </form>
 
-
-    <div class="list-group">
-      
+      <% if (books.length > 0) { %>
+      <div class="list-group">
+        <% books.forEach(book => { %>
+          <a href="/books/detail/<%= book.id %>" class="list-group-item list-group-item-action">
+            <h5 class="mb-1"><%= book.title %></h5>
+            <p class="mb-1"><%= book.description %></p>
+          </a>
+        <% }) %>
     </div>
+    <% } else { %>
+      <p>No books found :(</p>
+    <% } %>
   </div>
 </div>
 

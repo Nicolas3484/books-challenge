@@ -113,5 +113,14 @@
   </section>
 </div>
 <%- include('partials/footer.ejs') %>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const error = urlParams.get('error');
+  if (error === 'email_taken') {
+    alert('Email`s already taken.');
+  } else if (error === 'unknown') {
+    alert('An unknown error occurred.');
+  }
+</script>
 </body>
 </html>
