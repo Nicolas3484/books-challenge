@@ -17,9 +17,9 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-9">
   
-          <h1 class="text-white mb-4">Edit book <%= id %> </h1>
+          <h1 class="text-white mb-4">Edit book <%= book.id %> </h1>
   
-          <form action="/books/edit/<%= id %> " method="POST" class="card" style="border-radius: 15px;">
+          <form action="/books/edit/<%= book.id %>" method="POST" class="card" style="border-radius: 15px;">
             <input type="hidden" name="_method" value="PUT">
             <div class="card-body">
   

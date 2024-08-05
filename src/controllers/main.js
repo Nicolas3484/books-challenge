@@ -63,7 +63,7 @@ const mainController = {
         try {
             const bookId = req.params.id;
             await db.Book.destroy({ where: { id: bookId } });
-            res.redirect('/books'); 
+            res.redirect('/'); 
         } catch (error) {
             console.error(error);
             res.status(500).send('An error ocurred.');
@@ -160,7 +160,7 @@ const mainController = {
         if (!book) {
           return res.status(404).send('Book not found');
         }
-        res.render('editBook', { book });
+        res.render('editBook', { book, id });
       })
       .catch((err) => res.status(500).send(err.message));
   },
